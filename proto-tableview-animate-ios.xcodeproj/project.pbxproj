@@ -13,6 +13,8 @@
 		AA36330129CE1861004E01C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3632FF29CE1861004E01C5 /* Main.storyboard */; };
 		AA36330329CE1863004E01C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA36330229CE1863004E01C5 /* Assets.xcassets */; };
 		AA36330629CE1863004E01C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA36330429CE1863004E01C5 /* LaunchScreen.storyboard */; };
+		AA36330E29CE4A49004E01C5 /* ExpandableNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA36330D29CE4A49004E01C5 /* ExpandableNames.swift */; };
+		AA36331029CF98AC004E01C5 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA36330F29CF98AC004E01C5 /* ContactCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		AA36330229CE1863004E01C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA36330529CE1863004E01C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA36330729CE1863004E01C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA36330D29CE4A49004E01C5 /* ExpandableNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableNames.swift; sourceTree = "<group>"; };
+		AA36330F29CF98AC004E01C5 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				AA36330229CE1863004E01C5 /* Assets.xcassets */,
 				AA36330429CE1863004E01C5 /* LaunchScreen.storyboard */,
 				AA36330729CE1863004E01C5 /* Info.plist */,
+				AA36330D29CE4A49004E01C5 /* ExpandableNames.swift */,
+				AA36330F29CF98AC004E01C5 /* ContactCell.swift */,
 			);
 			path = "proto-tableview-animate-ios";
 			sourceTree = "<group>";
@@ -138,6 +144,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA36331029CF98AC004E01C5 /* ContactCell.swift in Sources */,
+				AA36330E29CE4A49004E01C5 /* ExpandableNames.swift in Sources */,
 				AA3632FE29CE1861004E01C5 /* ViewController.swift in Sources */,
 				AA3632FA29CE1861004E01C5 /* AppDelegate.swift in Sources */,
 				AA3632FC29CE1861004E01C5 /* SceneDelegate.swift in Sources */,
