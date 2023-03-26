@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Contacts
 
 class ViewController: UITableViewController {
 
@@ -30,9 +31,44 @@ class ViewController: UITableViewController {
         
     var showIndexPath = true
     
+    fileprivate func fetchContacts(){
+        let contactStore = CNContactStore()
+        contactStore.requestAccess(for: CNEntityType.contacts) { (accessGranted, error) in
+            if let error{
+                print("Failed to get Access: \(error)")
+                return
+            }
+            if accessGranted{
+                print("Got Access")
+                do{
+                    // CNContactFormatter.descriptorForRequiredKeys(for: CNContactFormatterStyle.fullName)
+                    let keys = [CNContactGivenNameKey, CNContactFamilyNameKey, CNContactEmailAddressesKey, CNContactPhoneNumbersKey] as [CNKeyDescriptor]
+                    let request = CNContactFetchRequest(keysToFetch: keys)
+                    try contactStore.enumerateContacts(with: request) { (contact, stopPointer) in
+                        print(contact.givenName)
+                        print(contact.familyName)
+                        print(contact.emailAddresses.first?.value ?? "")
+                        print(contact.phoneNumbers.first?.value.stringValue ?? "")
+                    }
+                } catch {
+                    print("Failed to fetch: \(error)")
+                }
+                                                        
+                } else {
+                    print("Access Denied")
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        // Call to querying contacts can make app unresponsive. Move the call to background thread
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
+            self.fetchContacts()
+        }
+        
         
         setupNavBar()
         
